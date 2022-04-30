@@ -1,10 +1,9 @@
 import React from "react";
+import Router from "./router";
 
 function App() {
   return (
-    <div className='text-3xl'>
-      Hello world
-    </div>
+    <Router />
   );
 }
 
