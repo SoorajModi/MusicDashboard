@@ -9,3 +9,5 @@ Install dependencies: `npm ci` or `npm install`
 Build: `npm run build`
 
 Run local server: `npm start`
+
+Run TailwindCSS: `npm run watch:css`
