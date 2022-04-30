@@ -11,3 +11,5 @@ Build: `npm run build`
 Run local server: `npm start`
 
 Run TailwindCSS: `npm run watch:css`
+
+Run ESLint: `npm run lint` or `npm run lint-fix`
