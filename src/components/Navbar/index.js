@@ -8,7 +8,7 @@ function Navbar() {
       </div>
       <div className="flex-none pr-3">
         <div className="form-control">
-          <input type="text" placeholder="Search" className="input input-bordered" />
+          <input type="text" placeholder="Search" className="input input-bordered rounded-full w-80" />
         </div>
       </div>
     </div>

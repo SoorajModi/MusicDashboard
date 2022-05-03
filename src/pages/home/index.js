@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { getAlbums } from '../../api/albums';
+import Music from './components/music';
 
 function Home({ status, requestAlbums }) {
   useEffect(() => {
@@ -10,9 +11,9 @@ function Home({ status, requestAlbums }) {
 
   return (
     <div>
-      { status === 'READY' && <span>Hello world</span> }
+      { status === 'READY' && <Music /> }
       { status === 'FAILED' && <span>Error</span> }
-      { status === 'PENDING' && <span>Loading</span> }
+      { status === 'PENDING' && <span>Loading...</span> }
     </div>
   );
 }
