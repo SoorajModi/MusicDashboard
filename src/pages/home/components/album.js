@@ -1,15 +1,18 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Album({ album }) {
+  const navigate = useNavigate();
+
   return (
-    <div className="card card-compact max-w-sm bg-base-100">
-      <figure><img src={album.artworkUrl100} alt="Album artwork" /></figure>
-      <div className="card-body">
-        <h2 className="card-title">{album.name}</h2>
-        <p>{album.artistName}</p>
+    <button type="button" className="card card-compact max-w-sm bg-base-100 w-48" onClick={() => navigate(`/${album.name}`)}>
+      <img src={album.artworkUrl100} alt="Album artwork" className="w-full" />
+      <div className="flex flex-col w-full text-left">
+        <span className="text-lg font-bold">{album.name}</span>
+        <span>{album.artistName}</span>
       </div>
-    </div>
+    </button>
   );
 }
 
