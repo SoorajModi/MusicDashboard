@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { getAlbums } from '../../api/albums';
-import Album from './components/album';
+import Genre from './components/genre';
 
 function Home({ status, requestAlbums, albums }) {
   useEffect(() => {
@@ -11,7 +11,7 @@ function Home({ status, requestAlbums, albums }) {
 
   return (
     <div>
-      { status === 'READY' && <Album album={albums.results[0]} /> }
+      { status === 'READY' && <Genre albums={albums.results.splice(0, 20)} title="Test" /> }
       { status === 'FAILED' && <span>Error</span> }
       { status === 'PENDING' && <span>Loading</span> }
     </div>

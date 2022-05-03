@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="min-h-screen relative">
       <Navbar />
-      <div className="pb-60">
+      <div className="pb-60 px-6">
         <Router />
       </div>
       <Footer />
