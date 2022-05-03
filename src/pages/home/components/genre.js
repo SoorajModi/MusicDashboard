@@ -4,7 +4,7 @@ import Album from './album';
 
 function Genre({ albums, title }) {
   return (
-    <div className="flex flex-col space-y-3">
+    <div className="flex flex-col space-y-5">
       <span className="text-2xl">{title}</span>
       <div className="carousel space-x-4">
         {albums.map((album) => (

@@ -2,7 +2,6 @@
 import React from 'react';
 
 function Album({ album }) {
-  console.log(album);
   return (
     <div className="card card-compact max-w-sm bg-base-100">
       <figure><img src={album.artworkUrl100} alt="Album artwork" /></figure>

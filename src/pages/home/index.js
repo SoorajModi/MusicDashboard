@@ -2,18 +2,18 @@ import React, { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { getAlbums } from '../../api/albums';
-import Genre from './components/genre';
+import Music from './components/music';
 
-function Home({ status, requestAlbums, albums }) {
+function Home({ status, requestAlbums }) {
   useEffect(() => {
     requestAlbums();
   }, [requestAlbums]);
 
   return (
     <div>
-      { status === 'READY' && <Genre albums={albums.results.splice(0, 20)} title="Test" /> }
+      { status === 'READY' && <Music /> }
       { status === 'FAILED' && <span>Error</span> }
-      { status === 'PENDING' && <span>Loading</span> }
+      { status === 'PENDING' && <span>Loading...</span> }
     </div>
   );
 }
