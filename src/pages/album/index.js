@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -6,15 +6,25 @@ import { getAlbums } from '../../api/albums';
 
 function Album({ albums }) {
   const { id } = useParams();
-  let album = albums.results.find((item) => item.id === id);
+  const [album, setAlbum] = useState({});
 
   useEffect(() => {
-    album = albums.results.find((item) => item.id === id);
+    if (albums && albums.results) {
+      setAlbum(albums.results.find((item) => item.id === id));
+    }
   }, [albums]);
 
   return (
-    <div>
-      {album.name}
+    <div className="flex flex-row w-full h-96 justify-center items-center space-x-3 my-20">
+      <div>
+        <img src={album.artworkUrl100} alt={`${album.name} album artwork`} className="w-96" />
+      </div>
+      <div className="text-center">
+        <div className="text-3xl font-bold">{album.name || 'N/A'}</div>
+        <div className="text-xl">{album.artistName || 'N/A'}</div>
+        <div className="text-sm space-x-2">{album.genres && album.genres.map((g) => <span>{g.name}</span>)}</div>
+        <div className="text-sm">{album.releaseDate && album.releaseDate.toString().slice(0, 4)}</div>
+      </div>
     </div>
   );
 }
