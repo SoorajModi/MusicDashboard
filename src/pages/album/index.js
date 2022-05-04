@@ -10,7 +10,7 @@ function Album({ albums, requestAlbums }) {
 
   useEffect(() => {
     if (albums && albums.results) {
-      setAlbum(albums.results.find((item) => item.id === id));
+      setAlbum(albums.results.find((item) => item.id === id) || {});
     } else {
       requestAlbums();
     }

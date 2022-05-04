@@ -7,7 +7,7 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:id" element={<Album />} />
+        <Route path="/album/:id" element={<Album />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
