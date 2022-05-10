@@ -25,8 +25,8 @@ function Album({ albums, requestAlbums }) {
 
 function isAlbumFound(obj) {
   return obj
-    && Object.keys(obj).length !== 0
-    && Object.getPrototypeOf(obj) === Object.prototype;
+    && Object.getPrototypeOf(obj) === Object.prototype
+    && Object.keys(obj).length !== 0;
 }
 
 const mapStateToProps = (state) => ({
